@@ -1,0 +1,25 @@
+image:
+  repository: tccr.io/truecharts/webgrabplus
+  pullPolicy: IfNotPresent
+  tag: v3.2.1
+
+securityContext:
+  runAsNonRoot: false
+
+PodSecurityPolicy:
+  runAsUser: 0
+  runAsGroup: 0
+
+env:
+  PUID: 568
+
+service:
+  main:
+    enabled: false
+    ports:
+      main:
+        enabled: false
+
+persistence:
+  varrun:
+    enabled: true
