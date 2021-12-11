@@ -10,6 +10,10 @@ PodSecurityPolicy:
   runAsUser: 0
   runAsGroup: 0
 
+secret:
+  GUAC_USER: ""
+  GUAC_PASS: ""
+
 env:
   PUID: 568
 
@@ -21,5 +25,8 @@ service:
         port: 8080
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
