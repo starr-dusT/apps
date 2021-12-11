@@ -10,9 +10,23 @@ podSecurityContext:
   runAsUser: 0
   runAsGroup: 0
 
+secret:
+  # fleet_admin_secret: ""  (Optional)
+
 env:
   PUID: 568
-  # TODO: mariadb support
+  fleet_admin_authentication_type: DATABASE
+  fleet_database_username: fleet
+
+envValueFrom:
+  fleet_database_url:  # Needs to be in format `jdbc:mariadb://<url>:3306/fleet` ?!
+    secretKeyRef:
+      name: mariadbcreds
+      key: plainhost
+  fleet_database_password:
+    secretKeyRef:
+      name: mariadbcreds
+      key: mariadb-password
 
 service:
   main:
@@ -27,3 +41,9 @@ persistence:
     mountPath: "/config"
   varrun:
     enabled: true
+
+mariadb:
+  enabled: true
+  mariadbUsername: fleet
+  mariadbDatabase: fleet
+  existingSecret: "mariadbcreds"
