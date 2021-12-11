@@ -12,7 +12,10 @@ podSecurityContext:
 
 env:
   PUID: 568
-
+  CMD_DOMAIN: ""
+  CMD_PROTOCOL_USESSL: false
+  CMD_URL_ADDPORT: true
+  # TODO: mariadb
 service:
   main:
     ports:

@@ -19,7 +19,15 @@ service:
       main:
         targetPort: 7396
         port: 7396
+  control:
+    ports:
+      control:
+        targetPort: 36330
+        port: 36330
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
