@@ -13,6 +13,7 @@ podSecurityContext:
   runAsGroup: 0
 
 env:
+  TZ: UTC
   PUID: 568
 
 service:
