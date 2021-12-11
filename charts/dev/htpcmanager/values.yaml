@@ -5,6 +5,8 @@ image:
 
 securityContext:
   runAsNonRoot: false
+  readOnlyRootFilesystem: false
+
 
 podSecurityContext:
   runAsUser: 0
