@@ -12,6 +12,20 @@ podSecurityContext:
 
 env:
   PUID: 568
+  DB_BACKEND: "PostgreSQL"
+  DB_PGSQL_USERNAME: "quassel-core"
+  AUTH_AUTHENTICATOR: "Database"
+  RUN_OPTS: "--config-from-environment"
+
+envValueFrom:
+  DB_PGSQL_PASSWORD:
+    secretKeyRef:
+      name: dbcreds
+      key: postgresql-password
+  DB_PGSQL_HOSTNAME:
+    secretKeyRef:
+      name: dbcreds
+      key: plainhost
 
 service:
   main:
@@ -19,7 +33,18 @@ service:
       main:
         targetPort: 4242
         port: 4242
+  ident:
+    ports:
+      ident:
+        targetPort: 10113
+        port: 10113
 
 persistence:
   varrun:
     enabled: true
+
+postgresql:
+  enabled: true
+  existingSecret: "dbcreds"
+  postgresqlUsername: quassel-core
+  postgresqlDatabase: quassel-core

@@ -17,8 +17,19 @@ service:
   main:
     ports:
       main:
-        targetPort: 514
-        port: 514
+        protocol: UDP
+        targetPort: 5514
+        port: 5514
+  syslog-tcp:
+    ports:
+      syslog-tcp:
+        targetPort: 6601
+        port: 6601
+  syslog-tls:
+    ports:
+      syslog-tls:
+        targetPort: 6514
+        port: 6514
 
 persistence:
   varrun:

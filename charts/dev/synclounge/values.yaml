@@ -12,6 +12,7 @@ podSecurityContext:
 
 env:
   PUID: 568
+  AUTH_LIST: ""
 
 service:
   main:

@@ -10,8 +10,13 @@ podSecurityContext:
   runAsUser: 0
   runAsGroup: 0
 
+secret:
+  PYUSER: ""
+  PYPASS: ""
+
 env:
   PUID: 568
+  GITURL: ""
 
 service:
   main:
@@ -21,5 +26,8 @@ service:
         port: 3131
 
 persistence:
+  code:
+    enabled: true
+    mountPath: "/code"
   varrun:
     enabled: true

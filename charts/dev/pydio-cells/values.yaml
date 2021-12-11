@@ -12,6 +12,7 @@ podSecurityContext:
 
 env:
   PUID: 568
+  EXTERNALURL: ""
 
 service:
   main:
@@ -19,7 +20,15 @@ service:
       main:
         targetPort: 8080
         port: 8080
+  gprc:
+    ports:
+      gprc:
+        targetPort: 33060
+        port: 33060
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
