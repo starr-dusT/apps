@@ -21,5 +21,8 @@ service:
         enabled: false
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
