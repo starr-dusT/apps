@@ -10,6 +10,10 @@ podSecurityContext:
   runAsUser: 0
   runAsGroup: 0
 
+secret:
+  # CONNECTION_TOKEN: ""  (Optional)
+  # SUDO_PASSWORD: ""  (Optional)
+
 env:
   PUID: 568
 
@@ -21,5 +25,8 @@ service:
         port: 3000
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true

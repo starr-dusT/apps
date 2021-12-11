@@ -12,14 +12,19 @@ podSecurityContext:
 
 env:
   PUID: 568
+  CLI_ARGS: ""
 
 service:
   main:
     ports:
       main:
+        protocol: UDP
         targetPort: 30000
         port: 30000
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config/.minetest"
   varrun:
     enabled: true

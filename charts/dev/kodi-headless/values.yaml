@@ -19,7 +19,21 @@ service:
       main:
         targetPort: 8080
         port: 8080
+  websocket:
+    ports:
+      websocket:
+        targetPort: 9090
+        port: 9090
+  esall:
+    ports:
+      esall:
+        protocol: UDP
+        targetPort: 9777
+        port: 9777
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config/.kodi"
   varrun:
     enabled: true

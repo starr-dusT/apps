@@ -13,6 +13,8 @@ podSecurityContext:
 env:
   PUID: 568
 
+# Supports redis only if we can provide every info with a single line url (pass, user, db, host)
+
 service:
   main:
     ports:
@@ -21,5 +23,8 @@ service:
         port: 8000
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true

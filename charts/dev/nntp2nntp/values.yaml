@@ -21,5 +21,8 @@ service:
         port: 1563
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true

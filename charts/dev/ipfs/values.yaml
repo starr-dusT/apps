@@ -19,7 +19,25 @@ service:
       main:
         targetPort: 80
         port: 80
+  peer:
+    ports:
+      perr:
+        targetPort: 4001
+        port: 4001
+  api:
+    ports:
+      api:
+        targetPort: 5001
+        port: 5001
+  gateway:
+    ports:
+      gateway:
+        targetPort: 8080
+        port: 8080
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true

@@ -12,6 +12,7 @@ podSecurityContext:
 
 env:
   PUID: 568
+  RUN_OPTS: ""
 
 service:
   main:
@@ -19,7 +20,21 @@ service:
       main:
         targetPort: 8875
         port: 8875
+  rtsp:
+    ports:
+      rtsp:
+        targetPort: 554
+        port: 554
+  discovery:
+    ports:
+      discovery:
+        protocol: UDP
+        targetPort: 1900
+        port: 1900
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
