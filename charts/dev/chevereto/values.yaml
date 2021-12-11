@@ -13,6 +13,19 @@ podSecurityContext:
 
 env:
   PUID: 568
+  CHEVERETO_DB_DRIVER: mysql
+  CHEVERETO_DB_NAME: "chevereto"
+  CHEVERETO_DB_USER: "chevereto"
+
+envValueFrom:
+  CHEVERETO_DB_HOST:
+    secretKeyRef:
+      name: mariadbcreds
+      key: plainporthost
+  CHEVERETO_DB_PASS:
+    secretKeyRef:
+      name: mariadbcreds
+      key: mariadb-password
 
 service:
   main:
@@ -30,3 +43,9 @@ persistence:
     mountPath: "/data"
   varrun:
     enabled: true
+
+mariadb:
+  enabled: true
+  mariadbUsername: chevereto
+  mariadbDatabase: chevereto
+  existingSecret: "mariadbcreds"

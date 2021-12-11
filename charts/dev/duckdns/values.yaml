@@ -10,8 +10,12 @@ podSecurityContext:
   runAsUser: 0
   runAsGroup: 0
 
+secret:
+  TOKEN: ""
+
 env:
   PUID: 568
+  SUBDOMAINS: ""
 
 service:
   main:
@@ -21,5 +25,8 @@ service:
         enabled: false
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
   varrun:
     enabled: true
