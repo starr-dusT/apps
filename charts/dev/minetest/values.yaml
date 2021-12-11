@@ -25,6 +25,6 @@ service:
 persistence:
   config:
     enabled: true
-    mountPath: "/config/.minetest"
+    mountPath: "/config"
   varrun:
     enabled: true
