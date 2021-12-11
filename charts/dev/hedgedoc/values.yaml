@@ -15,7 +15,19 @@ env:
   CMD_DOMAIN: ""
   CMD_PROTOCOL_USESSL: false
   CMD_URL_ADDPORT: true
-  # TODO: mariadb
+  DB_NAME: "hedgedoc"
+  DB_USER: "hedgedoc"
+
+envValueFrom:
+  DB_HOST:
+    secretKeyRef:
+      name: mariadbcreds
+      key: plainhost
+  DB_PASS:
+    secretKeyRef:
+      name: mariadbcreds
+      key: mariadb-password
+
 service:
   main:
     ports:
@@ -26,3 +38,9 @@ service:
 persistence:
   varrun:
     enabled: true
+
+mariadb:
+  enabled: true
+  mariadbUsername: hedgedoc
+  mariadbDatabase: hedgedoc
+  existingSecret: "mariadbcreds"
