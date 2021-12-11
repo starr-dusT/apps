@@ -19,8 +19,6 @@ _This list is to track `App Requests` from one place._
 - [ ] Deemix #628
 - [ ] Trackarr #602
 - [ ] Locast2Plex #473
-
-
 - [ ] n8n #27
 - [ ] InfluxDB #5
 - [ ] External-Auth-Server #28
@@ -84,8 +82,6 @@ _This list is to track `App Requests` from one place._
 - [ ] LanCache #138
 
 
-
-
 ##### TODO: LSIO containers with known complications
 
 - [ ] codimd ( Viable, but not via LSIO)
@@ -125,6 +121,7 @@ _This list is to track `App Requests` from one place._
 - [ ] formalms ( example helm-chart available from [ nicholaswilde ](https://github.com/nicholaswilde/helm-charts) )
 - [ ] projectsend ( example helm-chart available from [ nicholaswilde ](https://github.com/nicholaswilde/helm-charts) )
 - [ ] chyrp-lite
+- [ ] limnoria
 
 ##### TODO: Requires Postgresql customisation
 - [ ] Keycloack #1106
@@ -486,7 +483,6 @@ _These Apps have specific requirements or need specific customisation and care_
 - [x] ipfs
 - [x] kodi-headless
 - [x] libreoffice
-- [x] limnoria
 - [x] minetest
 - [x] minisatip
 - [x] mysql-workbench
