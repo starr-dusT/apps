@@ -11,8 +11,7 @@ podSecurityContext:
   runAsGroup: 0
 
 secret:
-  GUAC_USER: ""
-  GUAC_PASS: ""
+  # PASSWORD: ""  (Optional)
 
 env:
   PUID: 568

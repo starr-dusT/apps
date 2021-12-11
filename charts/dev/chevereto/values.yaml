@@ -17,9 +17,15 @@ service:
   main:
     ports:
       main:
-        targetPort: 80
-        port: 80
+        targetPort: 443
+        port: 443
 
 persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
+  data:
+    enabled: true
+    mountPath: "/data"
   varrun:
     enabled: true
