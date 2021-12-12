@@ -21,10 +21,10 @@ env:
   fleet_database_username: fleet
 
 envValueFrom:
-  fleet_database_url:  # Needs to be in format `jdbc:mariadb://<url>:3306/fleet` ?!
+  fleet_database_url:
     secretKeyRef:
       name: mariadbcreds
-      key: plainhost
+      key: jdbc
   fleet_database_password:
     secretKeyRef:
       name: mariadbcreds

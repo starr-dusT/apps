@@ -1,5 +1,5 @@
 image:
-  repository: tccr.io/truecharts/minetest
+    repository: tccr.io/truecharts/minetest
   pullPolicy: IfNotPresent
   tag: v5.4.1
 
@@ -22,6 +22,15 @@ service:
         protocol: UDP
         targetPort: 30000
         port: 30000
+
+probes:
+  liveness:
+    enabled: false
+  readiness:
+    enabled: false
+  startup:
+    enabled: false
+
 
 persistence:
   config:

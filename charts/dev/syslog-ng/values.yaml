@@ -18,14 +18,14 @@ service:
   main:
     ports:
       main:
+        targetPort: 6601
+        port: 6601
+  syslog-udp:
+    ports:
+      syslog-udp:
         protocol: UDP
         targetPort: 5514
         port: 5514
-  syslog-tcp:
-    ports:
-      syslog-tcp:
-        targetPort: 6601
-        port: 6601
   syslog-tls:
     ports:
       syslog-tls:
