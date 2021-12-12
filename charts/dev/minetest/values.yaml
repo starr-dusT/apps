@@ -1,5 +1,5 @@
 image:
-    repository: tccr.io/truecharts/minetest
+  repository: tccr.io/truecharts/minetest
   pullPolicy: IfNotPresent
   tag: v5.4.1
 

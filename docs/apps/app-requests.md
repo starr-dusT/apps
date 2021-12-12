@@ -161,6 +161,7 @@ _These Apps have specific requirements or need specific customisation and care_
 - [ ] boinc-client ( example helm-chart available from [ nicholaswilde ](https://github.com/nicholaswilde/helm-charts) )
 - [ ] hedgedoc ( example helm-chart available from [ nicholaswilde ](https://github.com/nicholaswilde/helm-charts) )
 - [ ] cryptpad ( example helm-chart available from [ nicholaswilde ](https://github.com/nicholaswilde/helm-charts) )
+- [ ] netbootxyz
 
 ### Apps that not have a specific candidate yet.
 
@@ -487,7 +488,6 @@ _These Apps have specific requirements or need specific customisation and care_
 - [x] minisatip
 - [x] mysql-workbench
 - [x] nano-wallet
-- [x] netbootxyz
 - [x] ngircd
 - [x] nntp2nntp
 - [x] openvscode-server
