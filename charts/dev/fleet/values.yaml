@@ -24,7 +24,7 @@ envValueFrom:
   fleet_database_url:
     secretKeyRef:
       name: mariadbcreds
-      key: jdbc
+      key: jdbc-mariadb
   fleet_database_password:
     secretKeyRef:
       name: mariadbcreds
